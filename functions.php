@@ -11,4 +11,7 @@ function my_theme_enqueue_styles() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+//This is added becourse in this branch of the plug-in we don't want 
+//  WP to compress any of the images.
+add_filter( 'jpeg_quality', function($arg){return 100;});
 ?>
